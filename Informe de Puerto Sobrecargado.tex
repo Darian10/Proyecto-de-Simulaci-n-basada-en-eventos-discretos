@@ -1,0 +1,197 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{verbatim}
+
+\title{Informe del Proyecto de Simulación basada en Eventos Discretos }
+\date{Curso 2020-2021}
+
+\begin{document}
+\maketitle
+\selectlanguage{spanish}
+
+  \begin{itemize}
+      \item Darian Dominguez Alayón C-411
+    \end{itemize}
+
+
+\section*{Puerto Sobrecargado (Overloaded Harbor)}\label{sec:intro}
+%-----------------------------------------------------------------------------------
+  En un puerto de supertanqueros que cuenta con 3 muelles y un remolcador para la descarga de estos barcos de manera 
+  simultánea se desea conocer el tiempo promedio de espera de los barcos para ser cargados en el puerto. 
+
+  El puerto cuenta con un bote remolcador disponible para asistir a los tanqueros. Los tanqueros de cualquier tamaño necesitan 
+  de un remolcador para aproximarse al muelle desde el puerto y para dejar el muelle de vuelta al puerto. 
+
+  El tiempo de intervalo de arribo de cada barco distribuye mediante una función exponencial con $\lambda$ = 8 horas. 
+  Existen tres tamaños distintos de tanqueros: pequeño, mediano y grande, la probabilidad correspondiente al tamaño de 
+  cada tanquero se describe en la tabla siguiente. El tiempo de carga de cada tanquero depende de su tamaño y los 
+  parámetros de distribución normal que lo representa también se describen en la tabla siguiente:
+
+\begin{displaymath}
+   \begin{tabular}{l c l}
+    Tamaño & Probabilidad Arribo & Tiempo de carga \\
+    Pequeño & 0.25 & $\mu$ = 9,  $\sigma^2$ = 1 \\
+    Mediano & 0.25 & $\mu$ = 12, $\sigma^2$ = 2\\
+    Grande  & 0.5  & $\mu$ = 18, $\sigma^2$ = 3 \\
+  \end{tabular}
+\end{displaymath}
+
+De manera general, cuando un tanquero llega al puerto, espera en una cola (virtual) hasta que exista un muelle vacío
+y que un remolcador esté disponible para atenderle. Cuando el remolcador está disponible lo asiste para que pueda
+comenzar su carga, este proceso demora un tiempo que distribuye exponencial con $\lambda$ = 2 horas.
+El proceso de carga comienza inmediatamente después de que el barco llega al muelle.
+Una vez terminado este proceso es necesaria la asis\-tencia del remolcador (esperando hasta que esté disponible) para
+llevarlo de vuelta al puerto, el tiempo de esta operación distribuye de manera exponencial con \mbox{$\lambda$ = 1}
+hora. El traslado entre el puerto y un muelle por el remolcador sin tanquero distribuye exponencial con $\lambda$ = 15 minutos.\\
+\hspace*{0.5cm}Cuando el remolcador termina la operación de aproximar un tanquero al muelle, entonces lleva al puerto al primer barco
+que esperaba por salir, en caso de que no exista barco por salir y algún muelle esté vacío, entonces el remolcador se
+dirige hacia el puerto para llevar al primer barco en espera hacia el muelle vacío; en caso de que no espere ningún barco,
+entonces el remolcador esperará por algún barco en un muelle para llevarlo al puerto. Cuando el remolcador termina
+la operación de llevar algún barco al puerto, este inmediatamente lleva al primer barco esperando hacia el muelle vacío.
+En caso de que no haya barcos en los muelles, ni barcos en espera para ir al muelle, entonces el remolcador se queda
+en el puerto esperando por algún barco para llevar a un muelle.\\
+\hspace*{0.5cm}Simule completamente el funcionamiento del puerto. Determine el tiempo promedio de espera en los muelles.
+
+ \section*{Principales Ideas seguidas para la solución del problema}
+\begin{itemize}
+	\item Hacemos que la simulación sea dinámica. Tenemos una variable $m = 3$ que representa la cantidad de muelles con los que deseamos hacer la simulación. En caso de que quisiéramos otra cantidad de muelles solo quedaría cambiar este valor.
+	\item Nuestra lista SS está conformada por la unión de una lista de muelles y una lista de barcos en espera. Cuando se vacía un muelle se saca el primer barco que esté en la lista de barcos en espera y se lleva al muelle vacío.
+	\item Se tienen 3 estados: arribo de un barco, llevar un barco al muelle $i$, sacar el barco del muelle $i$.
+	\item Guardamos los eventos con sus respectivos tiempos en un heap de mínimos. Entonces cada vez que saquemos un evento del heap, este es el que corresponde ejecutar pues su tiempo es el menor de todos los eventos.
+	\item Guardar el momento en que un barco termina de cargar como un tiempo listo para salir del muelle($t_{lsm}$), para de esta forma simular que mientras un barco está cargando, el remolcador pueda asistir a otros barcos.
+	\item Aprovechar el hecho que los muelles funcionan en paralelo para de esta forma poder atender a varios barcos al mismo tiempo.
+	\item Una vez el tiempo de la simulación haya sobrepasado el tiempo de duración que predefinamos, entonces no generar más barcos que arriben al puerto y terminar de atender a los barcos que están cargando y a los que están en la lista de espera.
+	\item Guardamos como propiedades de un barco, el tiempo en que entra al puerto y el tiempo en que sale del puerto, para después saber el tiempo de demora en el proceso.
+	\item Trabajamos considerando los valores de tiempo en horas
+	\item En el muelle guardamos el barco que arribó y guardamos en el remolcador el lugar en el que se encuentra.
+\end{itemize}
+
+
+%-----------------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------------
+ \section*{Modelo de Simulación de Eventos Discretos Desarrollado para resolver el problema}
+
+ Para realizar el modelo de la simulación se declararon las siguientes variables para lograr simular el problema de manera más sencilla:
+
+\begin{itemize}
+  \item $T$: tiempo en el que se va a desarrollar la simulación
+  \item $t$: tiempo en que va ocurriendo la simulación.
+  \item $t_{ap}$: tiempo de arribo de un barco al puerto.
+  \item $t_{sp}$: tiempo de salida de un barco del puerto.
+  \item $t_{bm}$: tiempo que demora el remolcador en llevar a un barco al muelle.
+  \item $t_{bp}$: tiempo que demora el remolcador en llevar a un barco al puerto.
+  \item $t_{rs}$: tiempo que demora el remolcador en moverse solo.
+  \item $t_{cb}$: tiempo de carga de un barco.
+  \item $t_{lsm}$: tiempo en que el barco esta listo para salir del muelle.\\
+  
+  
+  \item $barcos\_ atendidos$: barcos atendidos.
+  \item $m$: cantidad de muelles (en este problema se asume que hay 3 muelles pues es lo que dice la orden).
+  \item $SS$: es la unión de la lista de los muelles y la lista de barcos en espera. \\
+\end{itemize}
+
+ Los posible eventos que se pueden tener son:
+\begin{itemize}
+  \item Caso 1: Arribo de un barco al puerto.
+  \item Caso 2: Llevar un barco al muelle $i$.
+  \item Caso 3: Sacar el barco del muelle $i$.
+\end{itemize}
+
+\subsection*{Inicialización}
+\begin{enumerate}
+	\item $t = 0$
+	\item $SS=(None,None,None)$
+	\item $t_{sp} = t_{am_{i}} = t_{lsm_{i}} = \infty$
+	\item Generar $T_0$ y hacer $t_{ap} = T_0$
+	\item Generar un $barco$ con su tipo
+	\item $barco.set\_tiempo\_llegada\_al\_puerto(t_{ap})$
+	\item $crearArriboBarco(barco, t_{ap})$
+\end{enumerate}
+
+\subsection*{Caso 1: Arribo de un barco al puerto}
+\begin{enumerate}
+  \item $t$ = $t_{ap}$
+  \item Generar $T_{t_{ap}}$ y $t_{ap} = t + T_{t_{ap}}$
+  \item si $t_{ap} < T$:
+  \begin{enumerate}
+  	 \item Generar un $barco$ nuevo con su tipo
+  	 \item $barco.set\_tiempo\_llegada\_al\_puerto(t_{ap})$
+  	 \item $crearArriboBarco(barco, t_{ap})$
+  \end{enumerate}
+ 
+  \item Generar un $barcoM$ nuevo con su tipo
+  \item si $SS$($i,j,k$) tal que $i, j, k \neq 0$:
+  \begin{enumerate}
+    \item $SS$ = ($i,j,k$, barco1,..., barcoM)
+  \end{enumerate}
+  \item else:
+  \begin{enumerate}
+    \item si $SS$ = ($0,j,k$):
+    \begin{enumerate}
+      \item $crearLlevarAlMuelle(barcoM, 0, t)$
+      
+    \end{enumerate}
+    \item si $SS$ = ($i,0,k$):
+    \begin{enumerate}
+      \item $crearLlevarAlMuelle(barcoM, 1, t)$
+      
+    \end{enumerate}
+    \item si $SS$ = ($i,j,0$):
+    \begin{enumerate}
+     \item $crearLlevarAlMuelle(barcoM, 2, t)$
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{Caso 2: LLevar un barco al muelle $i$}
+
+\begin{enumerate}
+  \item si el remolcador está en muelle:
+  \begin{enumerate}
+    \item Generar $t_{rs}$ y $t += t_{rs}$
+  \end{enumerate}
+  \item Generar $t_{bm}$ y $t+=t_{bm}$
+  \item Generar $t_{cb}$ y $t_{lsm} = t + t_{cb}$
+  \item $barco.set\_tiempo\_listo\_para\_salir\_del\_muelle(t_{lsm})$
+  \item colocar en el muelle $i$ al barco
+  \item crearSalirDelMuelle(barco, i)
+  \item remolcador.set\_lugar("muelle")
+\end{enumerate}
+
+\subsection*{Caso 3: Sacar el barco del muelle $i$}
+\begin{enumerate}
+  \item si el remolcador está en puerto:
+  \begin{enumerate}
+    \item Generar $t_{rs}$ y $t+=t_{rs}$
+  \end{enumerate}
+  
+  \item Generar $t_{bp}$ y $t+=t_{bp}$
+  \item $t_{sp} = t$
+  \item $barco.set\_tiempo\_salida\_del\_puerto(t_{sp})$
+  \item $remolcador.set\_lugar("puerto")$
+  \item $SS$($i$) $= None$
+  \item si hay barcos\_en\_espera:
+  \begin{enumerate}
+  	\item $barco = SS(m+1)$
+  	\item $llevar\_barco\_al\_muelle(barco, i)$
+  \end{enumerate}
+\end{enumerate}
+
+
+ \section*{Consideraciones obtenidas a partir de la ejecución de las simulaciones del problema}
+
+ Para dar solución al problema se toma un tiempo de duración $T$. Cuando se cumpla ese tiempo T, no pueden arribar más barcos y se atienden a los barcos que están en el muelle y los que están en espera. Por cada barco que sale del puerto se guarda el tiempo que estuvo en el proceso y al final se promedia la suma de todos los tiempos de espera con respecto a la cantidad de barcos atendidos. Esta operación se realiza una cantidad de veces $corridas$ y se promedian esos resultados. Al final este último promedio es el que se da como resultado. Guardamos los resultados en salida.txt por si se quieren consultar en algún momento. Si simulamos el proceso en un día (24 h), con 50 corridas obtenemos un promedio de demora de un barco de aproximadamente 277h.
+
+\section*{Link del proyecto en GitHub}
+https://github.com/Darian10/Proyecto-de-Simulaci-n-basada-en-eventos-discretos.git
+%-----------------------------------------------------------------------------------
+\end{document}
+
+%===================================================================================

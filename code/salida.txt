@@ -1,0 +1,204 @@
+################################################################################################
+Corrida 1
+barcos atendidos: 125
+promedio de demora de un barco 341.6675770382821
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 2
+barcos atendidos: 116
+promedio de demora de un barco 310.1665051904479
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 3
+barcos atendidos: 169
+promedio de demora de un barco 446.9274561985944
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 4
+barcos atendidos: 102
+promedio de demora de un barco 286.17753071998783
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 5
+barcos atendidos: 80
+promedio de demora de un barco 235.3881800566475
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 6
+barcos atendidos: 135
+promedio de demora de un barco 367.3384122845575
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 7
+barcos atendidos: 61
+promedio de demora de un barco 184.63362347630124
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 8
+barcos atendidos: 60
+promedio de demora de un barco 179.87390166963803
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 9
+barcos atendidos: 124
+promedio de demora de un barco 347.1845794188721
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 10
+barcos atendidos: 161
+promedio de demora de un barco 448.86287476705115
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 11
+barcos atendidos: 70
+promedio de demora de un barco 211.98615076242515
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 12
+barcos atendidos: 112
+promedio de demora de un barco 327.7740572913594
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 13
+barcos atendidos: 70
+promedio de demora de un barco 186.75331870535194
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 14
+barcos atendidos: 4
+promedio de demora de un barco 36.28078587186393
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 15
+barcos atendidos: 70
+promedio de demora de un barco 206.47989210325667
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 16
+barcos atendidos: 59
+promedio de demora de un barco 173.32875108649938
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 17
+barcos atendidos: 170
+promedio de demora de un barco 475.5481266697595
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 18
+barcos atendidos: 75
+promedio de demora de un barco 208.86298602620522
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 19
+barcos atendidos: 141
+promedio de demora de un barco 380.1576031756286
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 20
+barcos atendidos: 138
+promedio de demora de un barco 387.2873259682377
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 21
+barcos atendidos: 75
+promedio de demora de un barco 210.5335050918488
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 22
+barcos atendidos: 128
+promedio de demora de un barco 351.5485509941613
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 23
+barcos atendidos: 91
+promedio de demora de un barco 259.9774403617204
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 24
+barcos atendidos: 125
+promedio de demora de un barco 347.6069443550033
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 25
+barcos atendidos: 149
+promedio de demora de un barco 418.9776910859742
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 26
+barcos atendidos: 64
+promedio de demora de un barco 175.02414248667102
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 27
+barcos atendidos: 76
+promedio de demora de un barco 207.71147143984115
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 28
+barcos atendidos: 128
+promedio de demora de un barco 356.9798230520833
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 29
+barcos atendidos: 124
+promedio de demora de un barco 329.06330653510327
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 30
+barcos atendidos: 84
+promedio de demora de un barco 252.8906204639348
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 31
+barcos atendidos: 134
+promedio de demora de un barco 358.0304813181617
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 32
+barcos atendidos: 84
+promedio de demora de un barco 243.80024559360868
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 33
+barcos atendidos: 104
+promedio de demora de un barco 288.54814257436016
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 34
+barcos atendidos: 33
+promedio de demora de un barco 98.0605613774426
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 35
+barcos atendidos: 58
+promedio de demora de un barco 174.83510899563865
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 36
+barcos atendidos: 146
+promedio de demora de un barco 399.6123945813995
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 37
+barcos atendidos: 84
+promedio de demora de un barco 233.5819435698614
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 38
+barcos atendidos: 83
+promedio de demora de un barco 249.67478982749378
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 39
+barcos atendidos: 51
+promedio de demora de un barco 144.27282843982422
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 40
+barcos atendidos: 60
+promedio de demora de un barco 171.04553042526425
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 41
+barcos atendidos: 51
+promedio de demora de un barco 150.60584209376762
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 42
+barcos atendidos: 85
+promedio de demora de un barco 246.8407191093067
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 43
+barcos atendidos: 121
+promedio de demora de un barco 336.4671509475915
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 44
+barcos atendidos: 155
+promedio de demora de un barco 423.4947563503678
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 45
+barcos atendidos: 102
+promedio de demora de un barco 271.62371296790275
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 46
+barcos atendidos: 84
+promedio de demora de un barco 227.6753698250239
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 47
+barcos atendidos: 115
+promedio de demora de un barco 324.44031872971715
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 48
+barcos atendidos: 76
+promedio de demora de un barco 213.67444844799317
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 49
+barcos atendidos: 118
+promedio de demora de un barco 324.1582592950372
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Corrida 50
+barcos atendidos: 115
+promedio de demora de un barco 310.3822725486125
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Promedio del promedio de demora de un barco en 24 horas y 50 corridas: 276.8763602273137
+
+
